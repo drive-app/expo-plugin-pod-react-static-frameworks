@@ -1,0 +1,1 @@
+# rnmapbox-plugin-pod-static-frameworks
