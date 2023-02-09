@@ -7,9 +7,9 @@ resources every time.
 
 Install the plugin with 
 ```
-npm install @driveapp/rnmapbox-plugin-pod-static-frameworks
+npm install @driveapp/expo-plugin-pod-react-static-frameworks
 OR
-yarn add @driveapp/rnmapbox-plugin-pod-static-frameworks
+yarn add @driveapp/expo-plugin-pod-react-static-frameworks
 ```
 
 Then make sure to add this line to your plugins section in your app.json / app.config.js / app.config.ts
@@ -17,6 +17,6 @@ Then make sure to add this line to your plugins section in your app.json / app.c
 ```
 {
   "name": "my app",
-  "plugins": ["@driveapp/rnmapbox-plugin-pod-static-frameworks"]
+  "plugins": ["@driveapp/expo-plugin-pod-react-static-frameworks"]
 }
 ```

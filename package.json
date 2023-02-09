@@ -1,0 +1,10 @@
+{
+  "name": "@driveapp/expo-plugin-pod-react-static-frameworks",
+  "version": "1.0.0",
+  "description": "This is a simple plugin which helps explicitly define static frameworks for most if not all React native packages.",
+  "main": "index.js",
+  "repository": "git@github.com:drive-app/expo-plugin-pod-react-static-frameworks.git",
+  "author": "Drive",
+  "license": "ISC",
+  "private": false
+}
