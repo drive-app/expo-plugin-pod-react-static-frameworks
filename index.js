@@ -4,6 +4,7 @@ const path = require("path");
 const { withDangerousMod, withPlugins } = require("@expo/config-plugins");
 
 const withSetReactNativePackagesStatic = (c) => {
+  console.log("> withSetReactNativePackagesStatic");
   return withDangerousMod(c, [
     "ios",
     async (config) => {
@@ -22,8 +23,10 @@ const withSetReactNativePackagesStatic = (c) => {
 const injectStaticNativePackagesMutation = (src) => {
   if (src.search("use_frameworks!") === -1) return src;
 
+  console.log("> use_frameworks! in source");
+
   const lines = src.split(/\r?\n/);
-  let index = lines.findIndex((line) => line.startsWith(`use_frameworks!`));
+  let index = lines.findIndex((line) => line.startsWith(`  use_frameworks!`));
   let tempL = lines[index];
 
   const injection =
