@@ -27,7 +27,7 @@ const injectStaticNativePackagesMutation = (src) => {
   let tempL = lines[index];
 
   const injection =
-    "pre_install do |installer|\ninstaller.pod_targets.each do |pod|\nif !pod.name.start_width?('react-native-shake') || pod.name.start_with?('react-native-') || pod.name.start_with?('ReactNative') || pod.name.start_with?('RN') || pod.name.eql?('RNPermissions') || pod.name.start_with?('Permission-')\ndef pod.build_type;\nPod::BuildType.static_library\nend\nend\nendmend";
+    "\tpre_install do |installer|\n\t\tinstaller.pod_targets.each do |pod|\n\t\t\tif !pod.name.start_width?('react-native-shake') || pod.name.start_with?('react-native-') || pod.name.start_with?('ReactNative') || pod.name.start_with?('RN') || pod.name.eql?('RNPermissions') || pod.name.start_with?('Permission-')\n\t\t\t\tdef pod.build_type;\n\t\t\t\t\tPod::BuildType.static_library\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend";
 
   return src.replace(tempL, tempL + "\n" + injection);
 };
