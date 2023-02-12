@@ -34,7 +34,7 @@ const injectStaticNativePackagesMutation = (src) => {
   let tempL = lines[index];
 
   const injection =
-    "\tuse_frameworks!\n\tpre_install do |installer|\n\t\tinstaller.pod_targets.each do |pod|\n\t\t\tif pod.name.start_with?('react-native-') || pod.name.start_with?('ReactNative') || pod.name.start_with?('RN') || pod.name.eql?('RNPermissions') || pod.name.start_with?('Permission-')\n\t\t\t\tdef pod.build_type;\n\t\t\t\t\tPod::BuildType.static_library\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend";
+    "\tuse_frameworks!\n\tpre_install do |installer|\n\t\tinstaller.pod_targets.each do |pod|\n\t\t\tif pod.name.start_with?('react-native-') || pod.name.start_with?('ReactNative') || pod.name.start_with?('RN') || pod.name.eql?('RNPermissions') || pod.name.start_with?('Permission-')\n\t\t\t\tputs \"* Setting to Static #{pod.name}\"\n\t\t\t\tdef pod.build_type;\n\t\t\t\t\tPod::BuildType.static_library\n\t\t\t\tend\n\t\t\tend\n\t\tend\n\tend";
 
   return src.replace(tempL, injection);
 };
